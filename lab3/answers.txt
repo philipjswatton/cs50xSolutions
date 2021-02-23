@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: After eliminating merge sort, the best way to locate bubble sort is by the fact that it is omega(n-1) while selection sort is omega(n^2). This was much faster on the pre-sorted file, suggesting it is bubble sort.
+
+sort2 uses: merge sort
+
+How do you know?: As merge sort is O(log(n)), it should be the fasest on more complicated tasks. In this case, it's faster than the other two.
+
+sort3 uses: selection sort
+
+How do you know?: After elminating merge sort and finding bubble sort, it is the only sort left and its O(n^2) and omega(n^2) are in line with the above results.
