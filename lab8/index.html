@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+
+                //check q1
+                let choices = document.getElementsByClassName("choice");
+                for (let i = 0; i < choices.length; i++) {
+                    choices[i].addEventListener("click", function() {
+                        // remove previous background colour
+                        /*for (let j = 0; j < choices.length; i++) {
+                            choices[j].style.background = "";
+                        }*/
+
+                        // select q1
+                        let q1 = document.getElementById("q1")
+
+                        // add new colour and text
+                        if (this.id == "a3") {
+                            document.getElementById(this.id).style.background = "green";
+                            q1.innerHTML += "Correct!";
+                        } else {
+                            document.getElementById(this.id).style.background = "red";
+                            q1.innerHTML += "Incorrect";
+                        }
+                    });
+                }
+
+                //check q2
+                document.getElementById("checkq2").addEventListener("click", function() {
+                    //get q2
+                    let q2 = document.getElementById("q2")
+
+                    //obtain text from textbox
+                    let text = document.getElementById("textq2").value.trim().toLowerCase();
+
+                    //check answer
+                    if (text == "fitzcarraldo editions") {
+                        q2.innerHTML += "Correct!";
+                    } else {
+                        q2.innerHTML += "Incorrect!";
+                    }
+                });
+            });
+
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section" id="q1">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Who is the author of <em>G&#246;del, Escher, Bach</em>?</h3>
+                <form>
+                    <button type="button" class="choice" id="a1">Melanie Mitchell</button>
+                    <button type="button" class="choice" id="a2">Olga Tokarczuk</button>
+                    <button type="button" class="choice" id="a3">Douglas Hofstadter</button>
+                    <button type="button" class="choice" id="a4">Daniel Dennet</button>
+                </form>
+
+            </div>
+
+            <div class="section" id="q2">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Which company published the English language translation of 'The Books of Jacob' in the UK?</h3>
+                <form>
+                    <input type="text" id="textq2">
+                    <button type="submit" id="checkq2">Check answer</button>
+                </form>
+
+                <!-- TODO: Add free response question here -->
+
+            </div>
+
+        </div>
+    </body>
+</html>
